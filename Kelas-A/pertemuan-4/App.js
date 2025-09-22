@@ -1,0 +1,56 @@
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet,TextInput,Image,Button, Text, View } from 'react-native';
+import React from 'react';
+export default function App() {
+  // buat state
+  const [nama, setNama] = React.useState('');
+  const [alamat, setAlamat] = React.useState('');
+  const handlerbuttonPress = () => {
+    alert(`Halo ${nama}, alamat kamu di ${alamat}`);
+  }
+  return (
+    <View style={styles.container}>
+      <Image source={{uri: 'data:image/png;base64,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'}} 
+      style={{width: 100, height: 100 }} />
+      <Text style={styles.text}>FORM BIODATA MAHASISWA</Text>
+      <TextInput style={styles.input} 
+      placeholder='Nama Lengkap'
+      value={nama}
+      onChangeText={setNama} />
+      <TextInput style={styles.input}
+      placeholder='Alamat'
+      name={alamat}
+      onChangeText={setAlamat} 
+      multiline= {true}
+      numofLines={4} 
+      />
+      <StatusBar style="auto" />
+      <Button title='Tampil' onPress={handlerbuttonPress}/>
+      <Text >Halo, {nama}</Text>
+      <Text >Alamat kamu di {alamat}</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#ffffffff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    color: 'green',
+    fontSize: 25,
+    fontWeight: 'bold',
+    textAlign: 'center',
+  },
+  input: {
+    marginTop: 20,
+    width: '70%' ,
+    height: 'auto',
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
